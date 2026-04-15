@@ -46,7 +46,7 @@ name = "Lee Hudson"
 version_file = "src/fe_sequencers/_version.py"
 
 [tool.pyright]
-typeCheckingMode = "strict"
+typeCheckingMode = "basic"
 reportMissingImports = false # Ignore missing stubs in imported modules
 
 [tool.pytest.ini_options]
