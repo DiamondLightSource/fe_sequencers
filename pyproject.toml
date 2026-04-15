@@ -12,7 +12,9 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 description = "Collection of dls_fe_sequencer instances"
-dependencies = [] # Add project dependencies here, e.g. ["click", "numpy"]
+dependencies = [
+    "dls-fe-sequencer",
+] # Add project dependencies here, e.g. ["click", "numpy"]
 dynamic = ["version"]
 license.file = "LICENSE"
 readme = "README.md"
@@ -136,3 +138,6 @@ lint.select = [
 # See https://github.com/DiamondLightSource/python-copier-template/issues/154
 # Remove this line to forbid private member access in tests
 "tests/**/*" = ["SLF001"]
+
+[tool.uv.sources]
+dls-fe-sequencer = { path = "../dls_fe_sequencer", editable = true }
