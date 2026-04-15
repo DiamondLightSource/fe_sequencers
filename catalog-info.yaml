@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: fe-sequencers
+  title: fe-sequencers
+  description: Collection of dls_fe_sequencer instances
+spec:
+  type: service
+  lifecycle: production
+  owner: 
