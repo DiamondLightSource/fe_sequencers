@@ -10,8 +10,9 @@ Collection of dls_fe_sequencer instances
 This is where you should write a short paragraph that describes what your module does,
 how it does it, and why people should use it.
 
-Source          | <https://github.com/DiamondLightSource/fe-sequencers>
+What            | Where
 :---:           | :---:
+Source          | <https://github.com/DiamondLightSource/fe-sequencers>
 PyPI            | `pip install fe-sequencers`
 Docker          | `docker run ghcr.io/diamondlightsource/fe-sequencers:latest`
 Releases        | <https://github.com/DiamondLightSource/fe-sequencers/releases>
