@@ -192,28 +192,15 @@ wheels = [
 
 [[package]]
 name = "dls-fe-sequencer"
-source = { editable = "../dls_fe_sequencer" }
+version = "1.0.0b1"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cothread" },
     { name = "softioc" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "cothread" },
-    { name = "softioc" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "copier" },
-    { name = "pre-commit" },
-    { name = "pyright" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "ruff" },
-    { name = "tox-uv" },
-    { name = "types-mock" },
+sdist = { url = "https://files.pythonhosted.org/packages/b3/3d/ca575fb35374a8ec4ba87121cd5e306c787cb8753a654ff163c0c28b1d6b/dls_fe_sequencer-1.0.0b1.tar.gz", hash = "sha256:84ccd75260e573b10f442e8bc6cf721e141c0969de8e53f705402bbc8b9f5ca2", size = 89921, upload-time = "2026-04-27T07:57:40.468Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/81/90/8fb353278a586ad3567bad3f02ab13881850be04cc5604e04a7caf863c81/dls_fe_sequencer-1.0.0b1-py3-none-any.whl", hash = "sha256:47479619fc88d68c1b8693b4a671d0658b8c7e29efc55395b7c24d8f889e3c8a", size = 16552, upload-time = "2026-04-27T07:57:39.397Z" },
 ]
 
 [[package]]
@@ -284,7 +271,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dls-fe-sequencer", editable = "../dls_fe_sequencer" }]
+requires-dist = [{ name = "dls-fe-sequencer" }]
 
 [package.metadata.requires-dev]
 dev = [
