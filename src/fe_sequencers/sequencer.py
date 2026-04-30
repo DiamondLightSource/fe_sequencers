@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from os import getcwd
 
 from dls_fe_sequencer.fe_sequencer import FESequencer
@@ -6,70 +7,82 @@ from dls_fe_sequencer.fe_sequencer import FESequencer
 from softioc import builder, softioc
 from softioc.softioc import devIocStats
 
-from fe_sequencers.sequences import OneAbsorber, Sequence, TwoAbsorbers
+from fe_sequencers.sequences import (
+    OneAbsorber,
+    Sequence,
+    TwoAbsorbers,
+    TwoAbsorbersFull,
+)
 
 
-# Single absorber front ends
-def fe03i(args=None):
-    sequencer("FE03I", OneAbsorber())
+def _run(absorber_cls, args=None):
+    """
+    Shared CLI implementation for all absorber entry points.
+
+    This parses the front-end identifier from the command line and
+    invokes the sequencer with the selected absorber topology.
+
+    Args:
+        absorber_cls:
+            Absorber class to instantiate (e.g. OneAbsorber, TwoAbsorbers).
+        args:
+            Optional argument list for testing. If None, arguments are
+            taken from sys.argv.
+    """
+    parser = ArgumentParser()
+    parser.add_argument(
+        "fe",
+        help="Front-end identifier (e.g. FE15I, FE16B)",
+    )
+    ns = parser.parse_args(args)
+
+    sequencer(ns.fe, absorber_cls())
 
 
-def fe04i(args=None):
-    sequencer("FE04I", OneAbsorber())
+def one_absorber(args=None):
+    """
+    Entry point for single-absorber front-end sequencers.
+
+    Example:
+        one-absorber FE15I
+    """
+    _run(OneAbsorber, args)
 
 
-def fe06i(args=None):
-    sequencer("FE06I", OneAbsorber())
+def two_absorbers(args=None):
+    """
+    Entry point for double-absorber front-end sequencers.
+
+    Example:
+        two-absorbers FE16B
+    """
+    _run(TwoAbsorbers, args)
 
 
-def fe07i(args=None):
-    sequencer("FE07I", OneAbsorber())
+def two_absorbers_full(args=None):
+    """
+    Entry point for full-config double-absorber front-end sequencers.
 
-
-def fe09i(args=None):
-    sequencer("FE09I", OneAbsorber())
-
-
-def fe11k(args=None):
-    sequencer("FE11K", OneAbsorber())
-
-
-def fe13i(args=None):
-    sequencer("FE13I", OneAbsorber())
-
-
-def fe16i(args=None):
-    sequencer("FE16I", OneAbsorber())
-
-
-def fe15i(args=None):
-    sequencer("FE15I", OneAbsorber())
-
-
-def fe18i(args=None):
-    sequencer("FE18I", OneAbsorber())
-
-
-def fe99i(args=None):
-    sequencer("FE99I", OneAbsorber())
-
-
-def fe21i(args=None):
-    sequencer("FE21I", OneAbsorber())
-
-
-# Double absorber front ends
-
-
-def fe16b(args=None):
-    sequencer("FE16B", TwoAbsorbers())
-
-
-def fe99b(args=None):
-    sequencer("FE99B", TwoAbsorbers())
+    Example:
+        two-absorbers-full FE99B
+    """
+    _run(TwoAbsorbersFull, args)
 
 
 def sequencer(front_end: str, sequence: Sequence):
+    """
+    Configure and run a softIOC-based FE sequencer.
+
+    This function performs all IOC setup, sequence configuration,
+    database loading, and enters interactive IOC mode.
+
+    Args:
+        front_end:
+            Front-end identifier (e.g. 'FE99B').
+        sequence:
+            Sequence definition object providing absorber configuration
+            and open/close sequencing behaviour.
+    """
     devIocStats(f"{front_end}-PY-IOC-01")
 
     # Set current working directory
@@ -98,4 +111,4 @@ def sequencer(front_end: str, sequence: Sequence):
 
 
 if __name__ == "__main__":
-    fe99b()
+    two_absorbers("FE99B")

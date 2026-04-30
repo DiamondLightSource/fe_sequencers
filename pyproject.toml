@@ -34,20 +34,11 @@ dev = [
 
 [project.scripts]
 fe-sequencers = "fe_sequencers.__main__:main"
-fe03i = "fe_sequencers.sequencer:fe03i"
-fe04i = "fe_sequencers.sequencer:fe04i"
-fe06i = "fe_sequencers.sequencer:fe06i"
-fe07i = "fe_sequencers.sequencer:fe07i"
-fe09i = "fe_sequencers.sequencer:fe09i"
-fe11k = "fe_sequencers.sequencer:fe11k"
-fe13i = "fe_sequencers.sequencer:fe13i"
-fe16b = "fe_sequencers.sequencer:fe16b"
-fe16i = "fe_sequencers.sequencer:fe16i"
-fe15i = "fe_sequencers.sequencer:fe15i"
-fe18i = "fe_sequencers.sequencer:fe18i"
-fe99i = "fe_sequencers.sequencer:fe99i"
-fe99b = "fe_sequencers.sequencer:fe99b"
-fe21i = "fe_sequencers.sequencer:fe21i"
+one-absorber = "fe_sequencers.sequencer:one_absorber"
+two-absorbers = "fe_sequencers.sequencer:two_absorbers"
+two-absorbers-full = "fe_sequencers.sequencer:two_absorbers_full"
+
+
 
 
 [project.urls]
