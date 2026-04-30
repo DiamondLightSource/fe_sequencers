@@ -1,6 +1,6 @@
 [![CI](https://github.com/DiamondLightSource/fe-sequencers/actions/workflows/ci.yml/badge.svg)](https://github.com/DiamondLightSource/fe-sequencers/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/DiamondLightSource/fe-sequencers/branch/main/graph/badge.svg)](https://codecov.io/gh/DiamondLightSource/fe-sequencers)
-[![PyPI](https://img.shields.io/pypi/v/fe-sequencers.svg)](https://pypi.org/project/fe-sequencers)
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # fe_sequencers
@@ -10,9 +10,9 @@ Collection of dls_fe_sequencer instances
 This is where you should write a short paragraph that describes what your module does,
 how it does it, and why people should use it.
 
-Source          | <https://github.com/DiamondLightSource/fe-sequencers>
+What            | Where
 :---:           | :---:
-PyPI            | `pip install fe-sequencers`
+Source          | <https://github.com/DiamondLightSource/fe-sequencers>
 Docker          | `docker run ghcr.io/diamondlightsource/fe-sequencers:latest`
 Releases        | <https://github.com/DiamondLightSource/fe-sequencers/releases>
 

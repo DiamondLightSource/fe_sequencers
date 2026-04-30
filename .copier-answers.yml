@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier
-_commit: 5.0.2
+_commit: 5.0.3
 _src_path: https://github.com/DiamondLightSource/python-copier-template.git
 author_email: lee.hudson@diamond.ac.uk
 author_name: Lee Hudson
@@ -9,12 +9,12 @@ component_type: service
 description: Collection of dls_fe_sequencer instances
 distribution_name: fe-sequencers
 docker: true
-docker_debug: true
+docker_debug: false
 docs_type: README
 git_platform: github.com
 github_org: DiamondLightSource
 package_name: fe_sequencers
-pypi: true
+pypi: false
 repo_name: fe-sequencers
-strict_typing: true
+strict_typing: false
 type_checker: pyright
