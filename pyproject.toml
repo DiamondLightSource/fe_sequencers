@@ -14,6 +14,7 @@ classifiers = [
 description = "Collection of dls_fe_sequencer instances"
 dependencies = [
     "dls-fe-sequencer",
+    "stdio-socket>=1.4.0"
 ] # Add project dependencies here, e.g. ["click", "numpy"]
 dynamic = ["version"]
 license.file = "LICENSE"
